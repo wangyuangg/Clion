@@ -1,45 +1,46 @@
-#include <iostream>
+//
+// Created by admin on 2023/2/14.
+//
+#include<iostream>
+#include<string>
 using namespace std;
 
-
-class person
-{
-
+class Phone{
 public:
-    person()
+     Phone(string name)
     {
-        cout<<"Person默认构造函数调用"<<endl;
+        branch = name;
+    }
+    string branch;
+
+};
+
+class Person
+{
+public:
+    //Phone m——Phone = pName;
+    Person(string name,string pName): m_name(name), m_phone(pName)
+    {
 
     }
-    person(int age)
-    {
-        age = age;
-        cout<<"有参构造函数"<<endl;
-    }
-    person(person &p)
-    {
-        age = p.age;
-        cout<<"拷贝函数"<<endl;
+    string m_name;
 
-    }
-    ~person()
-    {
-        cout<<"Person析构函数调用"<<endl;
-    }
-    int age;
+    Phone m_phone;
+
 
 };
 
 void test01()
 {
-    person p1(20);
-    person p2(p1);
+    Person p("张三","苹果max");
+    cout <<p.m_name<<p.m_phone.branch;
+
 }
-
-int main(){
-
+int main2() {
 
     test01();
     system("pause");
     return 0;
+
 }
+
